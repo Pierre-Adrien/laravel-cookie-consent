@@ -1,0 +1,23 @@
+{
+  "name": "pam-laravel-cookie-consent",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "laravel-mix": "^6.0.16"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.9",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1"
+  },
+  "scripts": {
+    "dev": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "prod": "mix --production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

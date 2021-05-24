@@ -1,0 +1,37 @@
+{
+    "name": "pierre-adrien/laravel-cookie-consent",
+    "description": "This package provides a fully configurable cookie-consent popup for a Laravel project.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pierre-Adrien MAISON",
+            "email": "pierre.adrien.maison.pro@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Pam\\CookieConsent\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pam\\CookieConsent\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pam\\CookieConsent\\CookieConsentServiceProvider"
+            ],
+            "aliases": {
+                "CookieConsent": "Pam\\CookieConsent\\CookieConsent"
+            }
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5",
+        "symfony/dom-crawler": "^5.2"
+    }
+}

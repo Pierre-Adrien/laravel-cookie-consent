@@ -1,0 +1,223 @@
+$blue-color: #00719c;
+$blue-color-15: lighten($blue-color, 15);
+$blue-color-20: lighten($blue-color, 20);
+$blue-color-60: lighten($blue-color, 30);
+$space: 40px;
+$space-close-button: 10px;
+$size-close-button: 30px;
+$transition-duration: 0.4s;
+$small-resolution: 600px;
+
+.cookie-consent-popup-container {
+    position: fixed;
+    z-index: 9999;
+    max-height: 60%;
+    left: $space;
+    right: $space;
+    background-color: white;
+    border: 2px solid #7283891A;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+    &.cookie-consent-position-top {
+        top: $space;
+    }
+
+    &.cookie-consent-position-bottom {
+        bottom: $space;
+    }
+
+    &.cookie-consent-popup-hider,
+    .cookie-consent-popup-hider {
+        display: none;
+    }
+
+    .title {
+        font-size: 24px;
+        color: $blue-color;
+        margin-bottom: 18px;
+    }
+
+    .cookie-consent-close-btn {
+        position: absolute;
+        font-size: 20px;
+        color: $blue-color;
+        top: $space-close-button;
+        right: $space-close-button;
+        background: none;
+        border: none;
+        border-radius: 50%;
+        user-select: none;
+        width: $size-close-button;
+        height: $size-close-button;
+        transition: $transition-duration;
+
+        &:hover {
+            background-color: rgba($blue-color-15, 30%);
+        }
+    }
+
+    .cookie-consent-popup-content {
+        overflow-y: auto;
+
+        .cookie-consent-popup-preferences {
+            .cookie-consent-display-preferences {
+                display: flex;
+                flex-direction: column;
+
+                .cookie-consent-cookie-item {
+                    display: flex;
+                    flex-direction: column;
+
+                    &.cookie-consent-cookie-group {
+                        & > .cookie-consent-cookie-item-title {
+                            font-size: 20px;
+                        }
+
+                        & > .cookie-consent-cookie-item {
+                            margin-left: 30px;
+                        }
+                    }
+
+                    .cookie-consent-cookie-item-title {
+                        font-size: 16px;
+                        color: $blue-color;
+                    }
+
+                    .cookie-consent-cookie-item-detail {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 18px;
+
+                        .cookie-consent-cookie-item-description {
+                            width: calc(100% - (80px));
+                            text-align: justify;
+                        }
+
+                        input.cookie-consent-checkbox {
+                            display: none;
+
+                            & + .cookie-consent-switchbox {
+                                box-sizing: content-box;
+                                background-color: #e74c3c;
+                                border: 1px solid #ccc;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                display: inline-block;
+                                height: 25px;
+                                overflow: hidden;
+                                position: relative;
+                                width: 60px;
+                                min-width: 60px;
+                                margin-left: 20px;
+
+                                &:after {
+                                    background-color: #fff;
+                                    border-radius: 20px;
+                                    content: ' ';
+                                    display: block;
+                                    height: 25px;
+                                    position: absolute;
+                                    right: calc(100% - 25px);
+                                    transition: all .1s linear;
+                                    width: 25px;
+                                }
+                            }
+                            &:checked {
+                                & + .cookie-consent-switchbox {
+                                    background-color: #2ecc71;
+                                    &:after {
+                                        right: 0;
+                                    }
+                                }
+                            }
+
+                            &:disabled + .cookie-consent-switchbox {
+                                opacity: 0.5;
+                                cursor: default;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cookie-consent-popup-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 12px;
+        white-space: nowrap;
+
+        @media (max-width: $small-resolution) {
+            justify-content: center;
+        }
+
+        button.cookie-consent-manage-preferences-btn {
+            color: $blue-color;
+            border: none;
+            background-color: white;
+            font-weight: 500;
+            padding: 12px 0;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .action-buttons {
+            display: flex;
+            margin-left: auto;
+
+            @media (max-width: $small-resolution) {
+                margin-left: inherit;
+            }
+
+            & > *{
+                margin: 0 5px;
+            }
+
+            button.cookie-consent-btn {
+                background-color: $blue-color-15;
+                color: white;
+                //margin: 0 5px;
+                padding: 12px;
+                border-radius: 8px;
+                border: none;
+                transition: $transition-duration;
+                font-weight: 500;
+
+                &.cookie-consent-back-btn {
+                    background-color: white;
+                    color: $blue-color-15;
+                    border: 1px solid $blue-color-15;
+
+                    &:hover {
+                        background-color: white;
+                        border-color: $blue-color-20;
+                        color: $blue-color-20;
+                    }
+                }
+
+                &:hover {
+                    background-color: $blue-color-20;
+                }
+
+                &:active {
+                    box-shadow: 0 0 8px $blue-color-60;
+                }
+            }
+        }
+    }
+
+    button {
+        user-select: none;
+    }
+}
+
