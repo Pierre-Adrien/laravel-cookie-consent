@@ -77,7 +77,6 @@
 }
 .cookie-consent-popup-container .cookie-consent-popup-content .cookie-consent-popup-preferences .cookie-consent-display-preferences .cookie-consent-cookie-item .cookie-consent-cookie-item-detail .cookie-consent-cookie-item-description {
   width: calc(100% - (80px));
-  text-align: justify;
 }
 .cookie-consent-popup-container .cookie-consent-popup-content .cookie-consent-popup-preferences .cookie-consent-display-preferences .cookie-consent-cookie-item .cookie-consent-cookie-item-detail input.cookie-consent-checkbox {
   display: none;
